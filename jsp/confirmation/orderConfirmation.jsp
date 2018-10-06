@@ -3,7 +3,7 @@
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
   The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you asd may not use this file except in compliance with
+  (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
       http://www.apache.org/licenses/LICENSE-2.0
@@ -14,10 +14,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 --%>
-<%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="sessions.SessionProfile"%>
 <%@page import="com.profile.Profile"%>
-<%@page isELIgnored="false" %>
 <html>
 <jsp:useBean id="cart" scope="session" class="sessions.DummyCart"/>
 <jsp:useBean id="profileDataHolder" scope="application" class="com.profile.ProfileDataHolder"/>
@@ -36,16 +34,7 @@
 Hi <%out.print(sessionsProfile.getLogin());%>
 </div>
 
-<div align="right">
-<a href="http://localhost:8080/CheckoutPro/jsp/sessions/friendCarts.jsp">View Shared Carts</a>
-</div>
-
-
 <%@ include file ="carts.html" %>
-
-<div style="float:right;">
-	<%@ include file ="../chats/chat.html" %>
-</div>
 
 <FONT size = 5 COLOR="#CC0000">
 <br> You have the following items in your cart:
@@ -55,23 +44,56 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 	<TD><b>Item Image</b></TD>
 	<TD><b>Item Name</b></TD>
 	<TD><b>Quantity</b></TD>
+	<TD><b>Added By</b></TD>
+	<TD><b>Do you want to approve or decline?</b></TD>
 </TR>
 
-<%
-    String[] items = cart.getItems();
-    for (int i=0; i<items.length; i++) {
-%>
+
 <TR>
-	<TD> Image <% out.print(i);%></TD>
-	<TD width=300> <% out.print(util.HTMLFilter.filter(items[i])); %></TD>
+	<TD> Image 0</TD>
+	<TD width=300> Beavis & Butt-head Video collection</TD>
 	<TD> 1</TD>
+	<TD> Self </TD>
+	 
 </TR>
-<%
-    }
-%>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> X-files movie</TD>
+	<TD> 1</TD>
+	<TD> Eric </TD>
+	<TD><a href="">Approve</a>
+	/<a href="">Decline</a> </TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Twin peaks tapes</TD>
+	<TD> 1</TD>
+	<TD> Shane </TD>
+	<TD>Approved</TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Concert tickets</TD>
+	<TD> 3</TD>
+	<TD> Jim </TD>
+	<TD><a href="">Approve</a>
+	/<a href="">Decline</a> </TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Switch blade</TD>
+	<TD> 3</TD>
+	<TD> Joseph </TD>
+	<TD> Declined</TD>
+</TR>
+
 </TABLE>
+<table>
+<TR>
+	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
+</TR>
+</table>
 </FONT>
-<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="btn" value="Share Now" /></a>
- <input type="button" class="btn" value="Stop Sharing" />
- <input type="button" class="btn" value="Cart Freeze" />
+
+<hr>
 </html>
