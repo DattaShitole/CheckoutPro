@@ -1,0 +1,99 @@
+<%--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--%>
+<%@page import="sessions.SessionProfile"%>
+<%@page import="com.profile.Profile"%>
+<html>
+<jsp:useBean id="cart" scope="session" class="sessions.DummyCart"/>
+<jsp:useBean id="profileDataHolder" scope="application" class="com.profile.ProfileDataHolder"/>
+<jsp:useBean id="sessionsProfile" scope="session" class="sessions.SessionProfile"/>
+
+<jsp:setProperty name="cart" property="*" />
+<%
+    cart.processRequest();
+	cart.reset();
+	if (profileDataHolder.profiles.size() <= 0) {
+		profileDataHolder.getAllProfiles();
+	}
+%>
+
+<div align="middle">
+Hi <%out.print(sessionsProfile.getLogin());%>
+</div>
+
+<%@ include file ="carts.html" %>
+
+<FONT size = 5 COLOR="#CC0000">
+<br> You have the following items in your cart:
+
+<TABLE border="1" cellspacing=10 cellpadding=5>
+<TR>
+	<TD><b>Item Image</b></TD>
+	<TD><b>Item Name</b></TD>
+	<TD><b>Quantity</b></TD>
+	<TD><b>Added By</b></TD>
+	<TD><b>Do you want to approve or decline?</b></TD>
+</TR>
+
+
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Beavis & Butt-head Video collection</TD>
+	<TD> 1</TD>
+	<TD> Self </TD>
+	 
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> X-files movie</TD>
+	<TD> 1</TD>
+	<TD> Eric </TD>
+	<TD><a href="">Approve</a>
+	/<a href="">Decline</a> </TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Twin peaks tapes</TD>
+	<TD> 1</TD>
+	<TD> Shane </TD>
+	<TD>Approved</TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Concert tickets</TD>
+	<TD> 3</TD>
+	<TD> Jim </TD>
+	<TD><a href="">Approve</a>
+	/<a href="">Decline</a> </TD>
+</TR>
+<TR>
+	<TD> Image 0</TD>
+	<TD width=300> Switch blade</TD>
+	<TD> 3</TD>
+	<TD> Joseph </TD>
+	<TD> Declined</TD>
+</TR>
+
+</TABLE>
+<table>
+<TR>
+	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
+</TR>
+</table>
+</FONT>
+
+<hr>
+</html>
