@@ -74,17 +74,7 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 %>
 </TABLE>
 </FONT>
-
-
-<c:choose>
-	<c:when test="${param.share eq true}">
-		<h4>Sharing with:</h4>
-		<c:forEach items="${sessionsProfile.getFriendProfiles()}" var="item">
-	    	<p>${item}</p>
-		</c:forEach>
-	</c:when>
-	<c:otherwise>
-		<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendList.jsp" >Share Now</a></p>
-	</c:otherwise>
-</c:choose>
+<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="btn" value="Share Now" /></a>
+ <input type="button" class="btn" value="Stop Sharing" />
+ <input type="button" class="btn" value="Cart Freeze" />
 </html>
