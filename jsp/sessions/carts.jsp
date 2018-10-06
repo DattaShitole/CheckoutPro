@@ -3,7 +3,7 @@
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
   The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you asd may not use this file except in compliance with
+  (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
       http://www.apache.org/licenses/LICENSE-2.0
@@ -36,10 +36,13 @@
 Hi <%out.print(sessionsProfile.getLogin());%>
 </div>
 
+<% if(sessionsProfile.getLogin() != null && !sessionsProfile.getLogin().equals("Eric")){%>
 <div align="right">
-<a href="http://localhost:8080/CheckoutPro/jsp/sessions/friendCarts.jsp">View Shared Carts</a>
+<a href="http://localhost:8080/CheckoutPro/jsp/sessions/viewSharedCarts.jsp">View Shared Carts</a>
 </div>
-
+<%
+}
+%>
 
 <%@ include file ="carts.html" %>
 

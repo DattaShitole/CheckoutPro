@@ -12,14 +12,14 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 <br/>
 <br/>
 <br/>
-<div style="vertical-align: top;">
-View My Shopping <a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp">Cart</a>
+<div style="float:right">
+<a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp">View My Shopping Cart</a>
 </div>
 
-<%@ include file ="carts.html" %>
+<%@ include file ="sharedCarts.html" %>
 
 <FONT size = 5 COLOR="#CC0000">
-<br> You are viewing James cart:
+<br> You are viewing Eric's cart:
 
 <TABLE border="1" cellspacing=10 cellpadding=5>
 <TR>
@@ -33,25 +33,28 @@ View My Shopping <a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.j
 
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Beavis & Butt-head Video collection</TD>
+	<TD width=300> Stan Smith Adidas Tennis for Gentleman</TD>
 	<TD> 1</TD>
-	<TD> James </TD>
+	<TD> Eric </TD>
 	<TD> Yes</TD>
 </TR>
+<%
+java.lang.String submit = request.getParameter("submit");
+	if(submit != null && submit.equals("add")){
+%>
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Twin peaks tapes</TD>
+	<TD width=300> <%
+java.lang.String item = request.getParameter("item");
+out.print(item);%></TD>
 	<TD> 1</TD>
-	<TD> Shane </TD>
-	<TD> Yes</TD>
-</TR>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Concert tickets</TD>
-	<TD> 3</TD>
-	<TD> Jim </TD>
+	<TD> Self </TD>
 	<TD> Pending Approval</TD>
 </TR>
+<%
+}
+%>
+
 </TABLE>
 </FONT>
 

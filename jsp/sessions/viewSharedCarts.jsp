@@ -34,62 +34,22 @@
 Hi <%out.print(sessionsProfile.getLogin());%>
 </div>
 
-<%@ include file ="carts.html" %>
 
 <FONT size = 5 COLOR="#CC0000">
-<br> You have the following items in your cart:
+<br> Shared Shopping Cart's
 
 <TABLE border="1" cellspacing=10 cellpadding=5>
 <TR>
-	<TD><b>Item Image</b></TD>
-	<TD><b>Item Name</b></TD>
-	<TD><b>Quantity</b></TD>
-	<TD><b>Added By</b></TD>
-	<TD><b>Do you want to approve or decline?</b></TD>
+	<TD><b>Cart Owner</b></TD>
+	<TD><b>Action</b></TD>
 </TR>
-
 
 <TR>
-	<TD> Image 0</TD>
-	<TD width=300> Stan Smith Adidas Tennis for Gentleman</TD>
-	<TD> 1</TD>
-	<TD> Self </TD>
-	 
+	<TD>Eric</TD>
+	<TD width=300> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/sharedCarts.jsp" >Load Cart</a></TD>
 </TR>
-<%
-	java.lang.String approve = request.getParameter("approve");
-	if(approve == null || !approve.equals("No")){
-	%>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Chronograph Watch in Silvertone w/Leather Strap</TD>
-	<TD> 1</TD>
-	<TD> Eric </TD>
-	<%	
-	if(approve != null && approve.equals("Yes")){
-	%> 
-	<TD> Approved</TD>
-	<%
-	}
-	else{
-	%>
-	<TD><a href="http://localhost:8080/CheckoutPro/jsp/sessions/cartApproval.jsp?approve=Yes">Approve</a>
-	/<a href="http://localhost:8080/CheckoutPro/jsp/sessions/cartApproval.jsp?approve=No">Decline</a> </TD>
-	<%
-	}
-	%>
-</TR>
-<%
- }
-%>
-
 </TABLE>
-<table>
-<TR>
-	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
-</TR>
-</table>
 </FONT>
 
-<hr>
+
 </html>
