@@ -16,8 +16,8 @@
 						<div class="banner-content col-lg-6 col-md-12">
 							<h1 class="title-top"><span>Flat</span> 75%Off</h1>
 							<h1 class="text-uppercase">
-								It’s Happening <br>
-								this Season!
+								Welcome to  <br>
+								Go Carting !!!
 							</h1>
 							<button class="primary-btn text-uppercase"><a href="#">Purchase Now</a></button>
 						</div>							
