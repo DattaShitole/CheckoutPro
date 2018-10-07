@@ -126,7 +126,7 @@
 				</div> 
 				<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="view-btn color-2" value="Share Now" /></a>
 				 <input type="button" class="view-btn color-2" value="Stop Sharing" />
-				 <input type="button" class="view-btn color-2" value="Cart Freeze" />
+				<p> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/cartApproval1.jsp" ><input type="button" class="view-btn color-2" value="Cart Freeze" /></a>
 				 <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" ><input type="button" class="view-btn color-2" value="Place Order" /></a></p>
             </div>
             <!-- End Cart Area -->
