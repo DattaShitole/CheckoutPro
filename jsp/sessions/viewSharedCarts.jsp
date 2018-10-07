@@ -30,26 +30,49 @@
 	}
 %>
 
-<div align="middle">
-Hi <%out.print(sessionsProfile.getLogin());%>
-</div>
+<%@ include file ="../headerfooter/header.jsp" %>
+<br><br>
 
+<!-- Start Banner Area -->
+    <section class="banner-area">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+                <div class="col-first">
+                    <h1>Shared Shopping Cart</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+            
+<div class="container">
+<br> Shared Shopping Cart's:<br>
 
-<FONT size = 5 COLOR="#CC0000">
-<br> Shared Shopping Cart's
-
-<TABLE border="1" cellspacing=10 cellpadding=5>
-<TR>
-	<TD><b>Cart Owner</b></TD>
-	<TD><b>Action</b></TD>
-</TR>
-
-<TR>
-	<TD>Eric</TD>
-	<TD width=300> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/sharedCarts.jsp" >Load Cart</a></TD>
-</TR>
-</TABLE>
-</FONT>
-
-
-</html>
+                <div class="cart-title">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="ml-15">Cart Owner</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Action</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <h6>Eric</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div><a href ="http://localhost:8080/CheckoutPro/jsp/sessions/sharedCarts.jsp" >Load Cart</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:right;">
+					<%@ include file ="../chats/chat.html" %>
+				</div> 
+            </div>
+            <!-- End Cart Area -->
+ <%@ include file ="../headerfooter/footer.jsp" %>

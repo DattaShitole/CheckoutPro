@@ -30,62 +30,134 @@
 	}
 %>
 
-<div align="middle">
-Hi <%out.print(sessionsProfile.getLogin());%>
-</div>
+<%@ include file ="../headerfooter/header.jsp" %>
+<br><br>
 
 <%@ include file ="carts.html" %>
 
-<FONT size = 5 COLOR="#CC0000">
+<div class="container">
 <br> You have the following items in your cart:
 
-<TABLE border="1" cellspacing=10 cellpadding=5>
-<TR>
-	<TD><b>Item Image</b></TD>
-	<TD><b>Item Name</b></TD>
-	<TD><b>Quantity</b></TD>
-	<TD><b>Added By</b></TD>
-	<TD><b>Do you want to approve or decline?</b></TD>
-</TR>
-
-
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Stan Smith Adidas Tennis for Gentleman</TD>
-	<TD> 1</TD>
-	<TD> Self </TD>
-	 
-</TR>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Chronograph Watch in Silvertone w/Leather Strap</TD>
-	<TD> 1</TD>
-	<TD> James </TD>
-	<TD>Approved</TD>
-</TR>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Gold Stars Tutu Skirt in Navy</TD>
-	<TD> 1</TD>
-	<TD> Diana </TD>
-	<TD>Approved</TD>
-</TR>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Broadway 16-Piece Dinnerware Set</TD>
-	<TD> 1</TD>
-	<TD> Daisy </TD>
-	<TD>Approved </TD>
-</TR>
-
-</TABLE>
-<table>
-<TR>
-	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
-	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" >Place order</a></TD>
-</TR>
-</table>
-</FONT>
-
-<hr>
-</html>
+                <div class="cart-title">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="ml-15">Product</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Quantity</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Added By</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Do you want to approve or decline?</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../img/ci1.jpg" class="img-fluid" alt="">
+                                <h6>Stan Smith Adidas Tennis for Gentleman</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="1" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div>Self</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../img/ci2.jpg" class="img-fluid" alt="">
+                                <h6>Chronograph Watch in Silvertone w/Leather Strap</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="1" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div>James</div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div>Approved</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../img/ci3.jpg" class="img-fluid" alt="">
+                                <h6>Gold Stars Tutu Skirt in Navy</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="3" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div>Diana</div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div>Approved</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../img/ci3.jpg" class="img-fluid" alt="">
+                                <h6>Broadway 16-Piece Dinnerware Set</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="3" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div>Daisy</div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div>Approved</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:right;">
+					<%@ include file ="../chats/chat.html" %>
+				</div> 
+				<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="view-btn color-2" value="Share Now" /></a>
+				 <input type="button" class="view-btn color-2" value="Stop Sharing" />
+				 <input type="button" class="view-btn color-2" value="Cart Freeze" />
+				 <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" ><input type="button" class="view-btn color-2" value="Place Order" /></a></p>
+            </div>
+            <!-- End Cart Area -->
+ <%@ include file ="../headerfooter/footer.jsp" %>

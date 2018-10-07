@@ -27,7 +27,7 @@ Group count:${sessionsProfile.getFriendProfiles().size()}
 	<c:when test="${sessionsProfile.getFriendProfiles().size() > 0}">
 		<TABLE border="1" cellspacing=10 cellpadding=5>
 			<TR>
-				<TD><b>Email</b></TD>
+				<TD><b>Member Logins</b></TD>
 			</TR>
 			<c:forEach var="item" items="${sessionsProfile.getFriendProfiles()}">
 				<TR>
@@ -37,7 +37,7 @@ Group count:${sessionsProfile.getFriendProfiles().size()}
 		</TABLE>
 	</c:when>
 	<c:otherwise>
-		<h5>You have empty Friend List !!!</h5>
+		<h5>You have empty member List !!!</h5>
 	</c:otherwise>
 </c:choose>
 </div><br><br>

@@ -6,19 +6,14 @@
 <jsp:useBean id="sessionsProfile" scope="session" class="sessions.SessionProfile"/>
 
 
-<div align="middle">
-Hi <%out.print(sessionsProfile.getLogin());%>
-</div>
-<br/>
-<br/>
-<br/>
-<div style="float:right">
-<a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp">View My Shopping Cart</a>
-</div>
-
+<%@ include file ="../headerfooter/header.jsp" %>
+<br><br>
+<div class="container">
 <%@ include file ="sharedCarts.html" %>
 
-<FONT size = 5 COLOR="#CC0000">
+
+
+<FONT size = 1 COLOR="#CC0000">
 <br> You are viewing Eric's cart:
 
 <TABLE border="1" cellspacing=10 cellpadding=5>
@@ -57,6 +52,5 @@ out.print(item);%></TD>
 
 </TABLE>
 </FONT>
-
-<hr>
-</html>
+</div><br><br><br><br>
+<%@ include file ="../headerfooter/footer.jsp" %>

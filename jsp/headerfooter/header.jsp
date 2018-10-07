@@ -67,10 +67,10 @@
                           <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li><a href="http://localhost:8080/CheckoutPro/jsp/home/index.jsp">Home</a></li>
-                                <li><a href="http://localhost:8080/CheckoutPro/jsp/friendlist/friendList.jsp">My FriendList</a></li>
-                                <li><a href="http://localhost:8080/CheckoutPro/jsp/sessions/friendCarts.jsp">View Shared Carts</a>
+                                <li><a href="http://localhost:8080/CheckoutPro/jsp/friendlist/friendList.jsp">Cart Members</a></li>
+                                <li><a href="http://localhost:8080/CheckoutPro/jsp/sessions/viewSharedCarts.jsp">View Shared Carts</a>
 </a></li>
-                                <li><a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp">Cart</a></li>
+                                <li><a href="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp">My Cart</a></li>
 
                             </ul>
                           </div>                        
