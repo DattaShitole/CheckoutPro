@@ -1,29 +1,13 @@
-<%--
- Licensed to the Apache Software Foundation (ASF) under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you asd may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
---%>
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="sessions.SessionProfile"%>
 <%@page import="com.profile.Profile"%>
 <%@page isELIgnored="false" %>
-<html>
 <jsp:useBean id="cart" scope="session" class="sessions.DummyCart"/>
 <jsp:useBean id="profileDataHolder" scope="application" class="com.profile.ProfileDataHolder"/>
 <jsp:useBean id="sessionsProfile" scope="session" class="sessions.SessionProfile"/>
 
 <jsp:setProperty name="cart" property="*" />
+
 <%
     cart.processRequest();
 	cart.reset();
@@ -32,46 +16,55 @@
 	}
 %>
 
-<div align="middle">
-Hi <%out.print(sessionsProfile.getLogin());%>
-</div>
-
-<div align="right">
-<a href="http://localhost:8080/CheckoutPro/jsp/sessions/friendCarts.jsp">View Shared Carts</a>
-</div>
-
+<%@ include file ="../headerfooter/header.jsp" %>
+<br><br>
 
 <%@ include file ="carts.html" %>
-
-<div style="float:right;">
-	<%@ include file ="../chats/chat.html" %>
-</div>
-
-<FONT size = 5 COLOR="#CC0000">
-<br> You have the following items in your cart:
-
-<TABLE border="1" cellspacing=10 cellpadding=5>
-<TR>
-	<TD><b>Item Image</b></TD>
-	<TD><b>Item Name</b></TD>
-	<TD><b>Quantity</b></TD>
-</TR>
-
-<%
-    String[] items = cart.getItems();
-    for (int i=0; i<items.length; i++) {
-%>
-<TR>
-	<TD> Image <% out.print(i);%></TD>
-	<TD width=300> <% out.print(util.HTMLFilter.filter(items[i])); %></TD>
-	<TD> 1</TD>
-</TR>
-<%
-    }
-%>
-</TABLE>
-</FONT>
-<p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="btn" value="Share Now" /></a>
- <input type="button" class="btn" value="Stop Sharing" />
- <input type="button" class="btn" value="Cart Freeze" />
-</html>
+<c:if test="${sessionsProfile.getLogin() ne 'Eric'}">
+	<div align="right" style="margin-right:10%">
+		<a href="http://localhost:8080/CheckoutPro/jsp/sessions/viewSharedCarts.jsp">View Shared Carts</a>
+	</div>
+</c:if>
+ <!-- Start Cart Area -->
+            <div class="container">
+                <div class="cart-title">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="ml-15">Product</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Quantity</h6>
+                        </div>
+                    </div>
+                </div>
+                <c:forEach var="item" items="${cart.getItems()}">
+                	<div class="cart-single-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../img/ci3.jpg" class="img-fluid" alt="">
+                                <h6>${item}</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="1" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:right;">
+					<%@ include file ="../chats/chat.html" %>
+				</div> 
+                </c:forEach><br><br>
+                <p> <a href ="http://localhost:8080/CheckoutPro/jsp/friendlist/friendSelection.jsp" ><input type="button" class="view-btn color-2" value="Share Now" /></a>
+				 <input type="button" class="view-btn color-2" value="Stop Sharing" />
+				 <input type="button" class="view-btn color-2" value="Cart Freeze" />
+				 <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" ><input type="button" class="view-btn color-2" value="Place Order" /></a></p>
+            </div>
+            <!-- End Cart Area -->
+ <%@ include file ="../headerfooter/footer.jsp" %>

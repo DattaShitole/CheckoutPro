@@ -51,46 +51,38 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Beavis & Butt-head Video collection</TD>
+	<TD width=300> Stan Smith Adidas Tennis for Gentleman</TD>
 	<TD> 1</TD>
 	<TD> Self </TD>
 	 
 </TR>
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> X-files movie</TD>
+	<TD width=300> Chronograph Watch in Silvertone w/Leather Strap</TD>
 	<TD> 1</TD>
-	<TD> Eric </TD>
-	<TD><a href="">Approve</a>
-	/<a href="">Decline</a> </TD>
-</TR>
-<TR>
-	<TD> Image 0</TD>
-	<TD width=300> Twin peaks tapes</TD>
-	<TD> 1</TD>
-	<TD> Shane </TD>
+	<TD> James </TD>
 	<TD>Approved</TD>
 </TR>
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Concert tickets</TD>
-	<TD> 3</TD>
-	<TD> Jim </TD>
-	<TD><a href="">Approve</a>
-	/<a href="">Decline</a> </TD>
+	<TD width=300> Gold Stars Tutu Skirt in Navy</TD>
+	<TD> 1</TD>
+	<TD> Diana </TD>
+	<TD>Approved</TD>
 </TR>
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Switch blade</TD>
-	<TD> 3</TD>
-	<TD> Joseph </TD>
-	<TD> Declined</TD>
+	<TD width=300> Broadway 16-Piece Dinnerware Set</TD>
+	<TD> 1</TD>
+	<TD> Daisy </TD>
+	<TD>Approved </TD>
 </TR>
 
 </TABLE>
 <table>
 <TR>
 	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
+	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" >Place order</a></TD>
 </TR>
 </table>
 </FONT>

@@ -51,7 +51,7 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> Beavis & Butt-head Video collection</TD>
+	<TD width=300> Stan Smith Adidas Tennis for Gentleman</TD>
 	<TD> 1</TD>
 	<TD> Self </TD>
 	 
@@ -62,7 +62,7 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 	%>
 <TR>
 	<TD> Image 0</TD>
-	<TD width=300> X-files movie</TD>
+	<TD width=300> Chronograph Watch in Silvertone w/Leather Strap</TD>
 	<TD> 1</TD>
 	<TD> Eric </TD>
 	<%	
@@ -87,6 +87,7 @@ Hi <%out.print(sessionsProfile.getLogin());%>
 <table>
 <TR>
 	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/sessions/carts.jsp" >Share Now</a></TD>
+	<TD> <a href ="http://localhost:8080/CheckoutPro/jsp/confirmation/orderConfirmation.jsp" >Place order</a></TD>
 </TR>
 </table>
 </FONT>
